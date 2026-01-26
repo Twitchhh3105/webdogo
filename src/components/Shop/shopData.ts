@@ -1,0 +1,198 @@
+import { Product } from "@/types/product";
+
+const shopData: Product[] = [
+  {
+    title: "Ghế Gỗ Óc Chó Cao Cấp",
+    reviews: 28,
+    price: 3500000,
+    discountedPrice: 2500000,
+    id: 1,
+    imgs: {
+      thumbnails: [
+        "/images/products/product-1-sm-1.png",
+        "/images/products/product-1-sm-2.png",
+      ],
+      previews: [
+        "/images/products/product-1-bg-1.png",
+        "/images/products/product-1-bg-2.png",
+      ],
+    },
+    description: "Ghế gỗ óc chó cao cấp với thiết kế sang trọng, vân gỗ tự nhiên đẹp mắt. Phù hợp cho phòng khách hoặc phòng làm việc.",
+    material: "Gỗ óc chó nhập khẩu",
+    dimensions: "60 x 60 x 85 cm",
+    warranty: "24 tháng",
+    brand: "Neuronest",
+    weight: "12kg",
+    color: "Nâu óc chó",
+  },
+  {
+    title: "Bàn Ăn Gỗ Sồi 6 Chỗ",
+    reviews: 45,
+    price: 12500000,
+    discountedPrice: 8900000,
+    id: 2,
+    imgs: {
+      thumbnails: [
+        "/images/products/product-2-sm-1.png",
+        "/images/products/product-2-sm-2.png",
+      ],
+      previews: [
+        "/images/products/product-2-bg-1.png",
+        "/images/products/product-2-bg-2.png",
+      ],
+    },
+    description: "Bàn ăn gỗ sồi 6 chỗ thiết kế tối giản, chắc chắn. Bề mặt sơn phủ cao cấp chống trầy xước và chống thấm nước.",
+    material: "Gỗ sồi tự nhiên",
+    dimensions: "160 x 80 x 75 cm",
+    warranty: "36 tháng",
+    brand: "Neuronest",
+    weight: "45kg",
+    color: "Vàng sồi",
+  },
+  {
+    title: "Tủ Quần Áo 3 Cánh Gỗ Tự Nhiên",
+    reviews: 32,
+    price: 18000000,
+    discountedPrice: 12500000,
+    id: 3,
+    imgs: {
+      thumbnails: [
+        "/images/products/product-3-sm-1.png",
+        "/images/products/product-3-sm-2.png",
+      ],
+      previews: [
+        "/images/products/product-3-bg-1.png",
+        "/images/products/product-3-bg-2.png",
+      ],
+    },
+    description: "Tủ quần áo 3 cánh rộng rãi, chia ngăn thông minh giúp tối ưu không gian lưu trữ quần áo và phụ kiện.",
+    material: "Gỗ xoan đào",
+    dimensions: "180 x 60 x 200 cm",
+    warranty: "12 tháng",
+    brand: "Neuronest",
+    weight: "120kg",
+    color: "Cánh gián",
+  },
+  {
+    title: "Kệ Sách 5 Tầng Phong Cách Nhật",
+    reviews: 19,
+    price: 4500000,
+    discountedPrice: 3200000,
+    id: 4,
+    imgs: {
+      thumbnails: [
+        "/images/products/product-4-sm-1.png",
+        "/images/products/product-4-sm-2.png",
+      ],
+      previews: [
+        "/images/products/product-4-bg-1.png",
+        "/images/products/product-4-bg-2.png",
+      ],
+    },
+    description: "Kệ sách 5 tầng thiết kế mộc mạc, phù hợp với không gian hiện đại và tối giản.",
+    material: "Gỗ thông",
+    dimensions: "80 x 30 x 160 cm",
+    warranty: "12 tháng",
+    brand: "Neuronest",
+    weight: "25kg",
+    color: "Gỗ tự nhiên",
+  },
+  {
+    title: "Sofa Gỗ Bọc Nệm 3 Chỗ",
+    reviews: 56,
+    price: 22000000,
+    discountedPrice: 15800000,
+    id: 5,
+    imgs: {
+      thumbnails: [
+        "/images/products/product-5-sm-1.png",
+        "/images/products/product-5-sm-2.png",
+      ],
+      previews: [
+        "/images/products/product-5-bg-1.png",
+        "/images/products/product-5-bg-2.png",
+      ],
+    },
+    description: "Sofa gỗ bọc nệm cao cấp, mút D40 êm ái, vải bọc nhập khẩu bền màu theo thời gian.",
+    material: "Khung gỗ sồi + Nệm cao cấp",
+    dimensions: "210 x 85 x 80 cm",
+    warranty: "60 tháng",
+    brand: "Neuronest",
+    weight: "65kg",
+    color: "Xám muối tiêu",
+  },
+  {
+    title: "Giường Ngủ Gỗ Cao Su 1m8",
+    reviews: 38,
+    price: 13500000,
+    discountedPrice: 9500000,
+    id: 6,
+    imgs: {
+      thumbnails: [
+        "/images/products/product-6-sm-1.png",
+        "/images/products/product-6-sm-2.png",
+      ],
+      previews: [
+        "/images/products/product-6-bg-1.png",
+        "/images/products/product-6-bg-2.png",
+      ],
+    },
+    description: "Giường ngủ gỗ cao su kích thước lớn, phản giường chắc chắn, không gây tiếng động khi sử dụng.",
+    material: "Gỗ cao su",
+    dimensions: "180 x 200 x 35 cm",
+    warranty: "24 tháng",
+    brand: "Neuronest",
+    weight: "80kg",
+    color: "Trắng sữa",
+  },
+  {
+    title: "Bàn Làm Việc Gỗ Thông",
+    reviews: 24,
+    price: 5800000,
+    discountedPrice: 4200000,
+    id: 7,
+    imgs: {
+      thumbnails: [
+        "/images/products/product-7-sm-1.png",
+        "/images/products/product-7-sm-2.png",
+      ],
+      previews: [
+        "/images/products/product-7-bg-1.png",
+        "/images/products/product-7-bg-2.png",
+      ],
+    },
+    description: "Bàn làm việc gỗ thông tích hợp hộc kéo tiện lợi, mặt bàn rộng rãi hỗ trợ tối đa cho công việc.",
+    material: "Gỗ thông New Zealand",
+    dimensions: "120 x 60 x 75 cm",
+    warranty: "12 tháng",
+    brand: "Neuronest",
+    weight: "22kg",
+    color: "Vàng mật ong",
+  },
+  {
+    title: "Đèn Sàn Gỗ Trang Trí",
+    reviews: 15,
+    price: 2800000,
+    discountedPrice: 1950000,
+    id: 8,
+    imgs: {
+      thumbnails: [
+        "/images/products/product-8-sm-1.png",
+        "/images/products/product-8-sm-2.png",
+      ],
+      previews: [
+        "/images/products/product-8-bg-1.png",
+        "/images/products/product-8-bg-2.png",
+      ],
+    },
+    description: "Đèn sàn gỗ trang trí với ánh sáng vàng ấm áp, tạo điểm nhấn cho không gian đọc sách hoặc thư giãn.",
+    material: "Gỗ sồi + Vải linen",
+    dimensions: "40 x 40 x 150 cm",
+    warranty: "12 tháng",
+    brand: "Neuronest",
+    weight: "5kg",
+    color: "Linen kem",
+  },
+];
+
+export default shopData;
