@@ -107,4 +107,10 @@ export const menuData: Menu[] = [
       },
     ],
   },
+  {
+    id: 8,
+    title: "Công nghệ AI",
+    newTab: false,
+    path: "/ai-room-planner",
+  },
 ];
