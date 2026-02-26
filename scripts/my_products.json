@@ -1,0 +1,186 @@
+[
+    {
+        "title": "Đôn gỗ để cây, Kệ gỗ dựng cây, Đôn để bình nước...",
+        "price": 176825,
+        "description": "Đôn gỗ tự nhiên nguyên khối, chịu lực tốt, trang trí phòng khách.",
+        "material": "Gỗ",
+        "categoryTitle": "Đôn Gỗ",
+        "ImagePath": "public/images/products/dongo.jpg"
+    },
+    {
+        "title": "Cây cán bột - Con lăn cán bột - dụng cụ làm bánh",
+        "price": 15000,
+        "description": "Dụng cụ cán bột làm bánh bằng gỗ tự nhiên, an toàn cho sức khỏe.",
+        "material": "Gỗ",
+        "categoryTitle": "Đồ dùng nhà bếp",
+        "ImagePath": "public/images/products/caycanbot.jpg"
+    },
+    {
+        "title": "Đôn gỗ đựng cây màu tự nhiên, Kệ gỗ đựng bình...",
+        "price": 176825,
+        "description": "Đôn gỗ đựng cây, thiết kế vân gỗ tự nhiên, chống nước tốt.",
+        "material": "Gỗ",
+        "categoryTitle": "Đôn Gỗ",
+        "ImagePath": "public/images/products/dongo1.jpg"
+    },
+    {
+        "title": "Kệ Đỡ Laptop - Giá Đỡ Laptop Gỗ Phong Cách T...",
+        "price": 70000,
+        "description": "Giá đỡ laptop bằng gỗ phong cách tối giản, tản nhiệt tốt.",
+        "material": "Gỗ",
+        "categoryTitle": "Phụ Kiện Máy Tính",
+        "ImagePath": "public/images/products/kemaytinh.jpg"
+    },
+    {
+        "title": "Đôn gỗ để cây cảnh - kệ gỗ đựng cây - kệ gỗ 4 chân -...",
+        "price": 176825,
+        "description": "Kệ gỗ 4 chân để cây cảnh trang trí nhà cửa.",
+        "material": "Gỗ",
+        "categoryTitle": "Đôn Gỗ",
+        "ImagePath": "public/images/products/dongo2tang.jpg"
+    },
+    {
+        "title": "Cây cán bột bằng gỗ - Con lăn cán bột bằng gỗ",
+        "price": 20000,
+        "description": "Con lăn cán bột làm bằng gỗ chắc chắn.",
+        "material": "Gỗ",
+        "categoryTitle": "Đồ dùng nhà bếp",
+        "ImagePath": "public/images/products/caycanbot.jpg"
+    },
+    {
+        "title": "Giá treo tường trang trí hình vuông phong cách B...",
+        "price": 25000,
+        "description": "Giá treo tường hình vuông tối giản trang trí phòng ngủ, phòng khách.",
+        "material": "Gỗ",
+        "categoryTitle": "Kệ Treo Tường",
+        "ImagePath": "public/images/products/giatreotuonghinhvuong.jpg"
+    },
+    {
+        "title": "Kệ Laptop máy tính kệ kê màn hình để bàn 1, 2 tần...",
+        "price": 60000,
+        "description": "Kệ để màn hình máy tính giúp tăng cường tư thế ngồi chuẩn.",
+        "material": "Gỗ",
+        "categoryTitle": "Phụ Kiện Máy Tính",
+        "ImagePath": "public/images/products/kelaptop.jpg"
+    },
+    {
+        "title": "Ống hút inox bảo vệ môi trường - Ống hút inox nhi...",
+        "price": 3600,
+        "description": "Ống hút inox có thể tái sử dụng nhiều lần.",
+        "material": "Inox",
+        "categoryTitle": "Đồ dùng nhà bếp",
+        "ImagePath": "public/images/products/onghutinox.jpg"
+    },
+    {
+        "title": "< GIÁ SIÊU RẺ> GIÁ TREO QUẦN ÁO THANH...",
+        "price": 220000,
+        "description": "Giá treo quần áo chữ A đơn giản, tiện dụng cho phòng trọ.",
+        "material": "Gỗ",
+        "categoryTitle": "Đồ nội thất",
+        "ImagePath": "public/images/products/giatreoquanao.jpg"
+    },
+    {
+        "title": "Móc Gỗ Treo Quần Áo Gắn Tường - Thanh Treo Quầ...",
+        "price": 60000,
+        "description": "Móc gỗ gắn tường treo quần áo tiết kiệm không gian.",
+        "material": "Gỗ",
+        "categoryTitle": "Chăm sóc nhà cửa",
+        "ImagePath": "public/images/products/mocgotreotuong.jpg"
+    },
+    {
+        "title": "Đôn gỗ để bình nước 2 tầng - Đôn gỗ để cây 2 tầng",
+        "price": 262000,
+        "description": "Đôn gỗ 2 tầng để bình nước, chậu hoa tối ưu diện tích.",
+        "material": "Gỗ",
+        "categoryTitle": "Đôn Gỗ",
+        "ImagePath": "public/images/products/dongo2tang.jpg"
+    },
+    {
+        "title": "Đồ chơi domino rút gỗ 52 chi đánh số, màu sắc kè...",
+        "price": 60000,
+        "description": "Đồ chơi rút gỗ kích thích tư duy cho trẻ em.",
+        "material": "Gỗ",
+        "categoryTitle": "Đồ chơi giáo dục",
+        "ImagePath": "public/images/products/dochoirutgo.jpg"
+    },
+    {
+        "title": "Móc treo quần áo gỗ tam giác có thanh...",
+        "price": 20000,
+        "description": "Móc treo quần áo gỗ bền đẹp không bị cong vênh.",
+        "material": "Gỗ",
+        "categoryTitle": "Chăm sóc nhà cửa",
+        "ImagePath": "public/images/products/moctreo.jpg"
+    },
+    {
+        "title": "Giá treo quần áo thanh đơn màu trắng - Sào treo quầ...",
+        "price": 309000,
+        "description": "Sào treo quần áo khung sắt sơn tĩnh điện trắng.",
+        "material": "Kim loại",
+        "categoryTitle": "Đồ nội thất",
+        "ImagePath": "public/images/products/giatreoquanaomautrang.jpg"
+    },
+    {
+        "title": "KỆ VUÔNG GỖ 2 TẦNG - KIỂU HÀN QUỐC",
+        "price": 319000,
+        "description": "Kệ gỗ vuông 2 tầng tủ đầu giường phong cách Hàn Quốc.",
+        "material": "Gỗ",
+        "categoryTitle": "Đồ nội thất",
+        "ImagePath": "public/images/products/kego2tang.jpg"
+    },
+    {
+        "title": "(Big size dài 1m2 cao 1m5) Giá treo quần áo...",
+        "price": 329000,
+        "description": "Giá treo quần áo size lớn để được nhiều đồ.",
+        "material": "Gỗ",
+        "categoryTitle": "Đồ nội thất",
+        "ImagePath": "public/images/products/giatreoquanao(bigsize).jpg"
+    },
+    {
+        "title": "Giá treo tai nghe bằng gỗ tự nhiên, Kệ gác tai nghe...",
+        "price": 250000,
+        "description": "Giá treo tai nghe máy tính bằng gỗ độc đáo.",
+        "material": "Gỗ",
+        "categoryTitle": "Phụ Kiện Máy Tính",
+        "ImagePath": "public/images/products/giagotreotainghe.jpg"
+    },
+    {
+        "title": "Giá treo quần áo chữ A 2 tầng - phong cách hàn qu...",
+        "price": 529000,
+        "description": "Kệ treo đồ chữ A lớn có 2 tầng dưới để đồ.",
+        "material": "Gỗ",
+        "categoryTitle": "Đồ nội thất",
+        "ImagePath": "public/images/products/giatreoquanao.jpg"
+    },
+    {
+        "title": "Giá treo quần áo chữ A 1 tầng",
+        "price": 389000,
+        "description": "Giá treo đồ gấp gọn tiện dụng.",
+        "material": "Gỗ",
+        "categoryTitle": "Đồ nội thất",
+        "ImagePath": "public/images/products/giatreoquanaochuA.jpg"
+    },
+    {
+        "title": "Kệ sách 4 tầng korean style - kệ 4 tầng đa năng- kệ 4...",
+        "price": 669000,
+        "description": "Kệ sách gỗ 4 tầng siêu xinh.",
+        "material": "Gỗ",
+        "categoryTitle": "Đồ nội thất",
+        "ImagePath": "public/images/products/kesach4tangkorea.jpg"
+    },
+    {
+        "title": "KỆ KÍNH 2 TẦNG KIỂU HÀN - GLASS SHELF -...",
+        "price": 329000,
+        "description": "Kệ tủ đầu giường mặt kính sang trọng.",
+        "material": "Gỗ và kính",
+        "categoryTitle": "Đồ nội thất",
+        "ImagePath": "public/images/products/kekinh2tang.jpg"
+    },
+    {
+        "title": "Khuôn đậu phụ bằng gỗ - Khuôn làm đậu phụ",
+        "price": 160000,
+        "description": "Khuôn ép đậu phụ tại nhà an toàn vệ sinh.",
+        "material": "Gỗ",
+        "categoryTitle": "Đồ dùng nhà bếp",
+        "ImagePath": "public/images/products/khuondauphu.jpg"
+    }
+]

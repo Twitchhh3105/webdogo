@@ -3,10 +3,10 @@ import React from "react";
 import SingleItem from "./SingleItem";
 import Image from "next/image";
 import Link from "next/link";
-import shopData from "@/components/Shop/shopData";
 import { useLanguage } from "@/hooks/useLanguage";
+import { Product } from "@/types/product";
 
-const BestSeller = () => {
+const BestSeller = ({ products }: { products: Product[] }) => {
   const { t } = useLanguage();
 
   return (
@@ -32,14 +32,14 @@ const BestSeller = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7.5">
           {/* <!-- Best Sellers item --> */}
-          {shopData.slice(1, 7).map((item, key) => (
+          {products.slice(0, 6).map((item, key) => (
             <SingleItem item={item} key={key} />
           ))}
         </div>
 
         <div className="text-center mt-12.5">
           <Link
-            href="/shop"
+            href="/shop-with-sidebar"
             className="inline-flex font-medium text-custom-sm py-3 px-7 sm:px-12.5 rounded-md border-gray-3 border bg-gray-1 text-dark ease-out duration-200 hover:bg-dark hover:text-white hover:border-transparent transition-all"
           >
             {t.viewAll}

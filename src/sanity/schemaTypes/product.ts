@@ -25,18 +25,18 @@ export default defineType({
             title: 'Description',
             type: 'text',
         }),
-        defineField({
+        {
             name: 'images',
             title: 'Images',
             type: 'array',
             of: [{ type: 'image' }],
-        }),
-        defineField({
+        },
+        {
             name: 'category',
             title: 'Category',
             type: 'reference',
             to: [{ type: 'category' }],
-        }),
+        },
         defineField({
             name: 'material',
             title: 'Material',

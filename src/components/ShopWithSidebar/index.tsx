@@ -4,15 +4,28 @@ import Breadcrumb from "../Common/Breadcrumb";
 import CustomSelect from "./CustomSelect";
 import CategoryDropdown from "./CategoryDropdown";
 import GenderDropdown from "./GenderDropdown";
-import SizeDropdown from "./SizeDropdown";
-import ColorsDropdwon from "./ColorsDropdwon";
 import PriceDropdown from "./PriceDropdown";
 import shopData from "../Shop/shopData";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
 import { useLanguage } from "@/hooks/useLanguage";
+import { Product } from "@/types/product";
 
-const ShopWithSidebar = () => {
+interface CategoryCount {
+  name: string;
+  products: number;
+  isRefined?: boolean;
+}
+
+const ShopWithSidebar = ({
+  passedProducts,
+  categoryCounts = [],
+  genderCounts = []
+}: {
+  passedProducts: Product[];
+  categoryCounts?: CategoryCount[];
+  genderCounts?: CategoryCount[];
+}) => {
   const [productStyle, setProductStyle] = useState("grid");
   const [productSidebar, setProductSidebar] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
@@ -30,54 +43,6 @@ const ShopWithSidebar = () => {
     { label: "Mới nhất", value: "0" },
     { label: "Bán chạy nhất", value: "1" },
     { label: "Cũ nhất", value: "2" },
-  ];
-
-  const categories = [
-    {
-      name: "Sofa",
-      products: 15,
-      isRefined: true,
-    },
-    {
-      name: "Bàn",
-      products: 12,
-      isRefined: false,
-    },
-    {
-      name: "Ghế",
-      products: 18,
-      isRefined: false,
-    },
-    {
-      name: "Tủ",
-      products: 10,
-      isRefined: false,
-    },
-    {
-      name: "Giường",
-      products: 8,
-      isRefined: false,
-    },
-    {
-      name: "Kệ",
-      products: 14,
-      isRefined: false,
-    },
-  ];
-
-  const genders = [
-    {
-      name: "Phòng khách",
-      products: 25,
-    },
-    {
-      name: "Phòng ngủ",
-      products: 18,
-    },
-    {
-      name: "Văn phòng",
-      products: 12,
-    },
   ];
 
   useEffect(() => {
@@ -99,6 +64,49 @@ const ShopWithSidebar = () => {
     };
   });
 
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedSpaces, setSelectedSpaces] = useState<string[]>([]);
+  const [sortOption, setSortOption] = useState<{ label: string; value: string }>(options[0]);
+  const [displayedProducts, setDisplayedProducts] = useState<Product[]>([]);
+
+  const handleCategoryChange = (categoryName: string) => {
+    setSelectedCategories(prev =>
+      prev.includes(categoryName) ? prev.filter(c => c !== categoryName) : [...prev, categoryName]
+    );
+  };
+
+  const handleSpaceChange = (spaceName: string) => {
+    setSelectedSpaces(prev =>
+      prev.includes(spaceName) ? prev.filter(s => s !== spaceName) : [...prev, spaceName]
+    );
+  };
+
+  const handleClearAll = () => {
+    setSelectedCategories([]);
+    setSelectedSpaces([]);
+  };
+
+  const filteredProducts = passedProducts.filter(product => {
+    const matchesCategory = selectedCategories.length === 0 || ((product as any).categoryTitle && selectedCategories.includes((product as any).categoryTitle));
+    const matchesSpace = selectedSpaces.length === 0 || ((product as any).space && selectedSpaces.includes((product as any).space));
+    return matchesCategory && matchesSpace;
+  });
+
+  useEffect(() => {
+    let result = [...filteredProducts];
+    if (sortOption.value === "0" || sortOption.value === "1") {
+      // Randomize for "Mới nhất" and "Bán chạy nhất"
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+    } else if (sortOption.value === "2") {
+      // Cũ nhất
+      result.reverse();
+    }
+    setDisplayedProducts(result);
+  }, [selectedCategories, selectedSpaces, sortOption, passedProducts]);
+
   return (
     <>
       <Breadcrumb
@@ -111,16 +119,16 @@ const ShopWithSidebar = () => {
             {/* <!-- Sidebar Start --> */}
             <div
               className={`sidebar-content fixed xl:z-1 z-9999 left-0 top-0 xl:translate-x-0 xl:static max-w-[310px] xl:max-w-[270px] w-full ease-out duration-200 ${productSidebar
-                  ? "translate-x-0 bg-white p-5 h-screen overflow-y-auto"
-                  : "-translate-x-full"
+                ? "translate-x-0 bg-white p-5 h-screen overflow-y-auto"
+                : "-translate-x-full"
                 }`}
             >
               <button
                 onClick={() => setProductSidebar(!productSidebar)}
                 aria-label="button for product sidebar toggle"
                 className={`xl:hidden absolute -right-12.5 sm:-right-8 flex items-center justify-center w-8 h-8 rounded-md bg-white shadow-1 ${stickyMenu
-                    ? "lg:top-20 sm:top-34.5 top-35"
-                    : "lg:top-24 sm:top-39 top-37"
+                  ? "lg:top-20 sm:top-34.5 top-35"
+                  : "lg:top-24 sm:top-39 top-37"
                   }`}
               >
                 <svg
@@ -152,21 +160,23 @@ const ShopWithSidebar = () => {
                   <div className="bg-white shadow-1 rounded-lg py-4 px-5">
                     <div className="flex items-center justify-between">
                       <p>Bộ lọc:</p>
-                      <button className="text-blue">Xóa tất cả</button>
+                      <button onClick={handleClearAll} className="text-blue">Xóa tất cả</button>
                     </div>
                   </div>
 
                   {/* <!-- category box --> */}
-                  <CategoryDropdown categories={categories} />
+                  <CategoryDropdown
+                    categories={categoryCounts}
+                    selectedCategories={selectedCategories}
+                    onCategoryChange={handleCategoryChange}
+                  />
 
                   {/* <!-- gender box --> */}
-                  <GenderDropdown genders={genders} />
-
-                  {/* // <!-- size box --> */}
-                  <SizeDropdown />
-
-                  {/* // <!-- color box --> */}
-                  <ColorsDropdwon />
+                  <GenderDropdown
+                    genders={genderCounts}
+                    selectedCategories={selectedSpaces}
+                    onCategoryChange={handleSpaceChange}
+                  />
 
                   {/* // <!-- price range box --> */}
                   <PriceDropdown />
@@ -181,10 +191,10 @@ const ShopWithSidebar = () => {
                 <div className="flex items-center justify-between">
                   {/* <!-- top bar left --> */}
                   <div className="flex flex-wrap items-center gap-4">
-                    <CustomSelect options={options} />
+                    <CustomSelect options={options} onChange={(opt) => setSortOption(opt)} />
 
                     <p>
-                      Hiển thị <span className="text-dark">9 / 50</span>{" "}
+                      Hiển thị <span className="text-dark">{displayedProducts.length} / {passedProducts.length}</span>{" "}
                       sản phẩm
                     </p>
                   </div>
@@ -195,8 +205,8 @@ const ShopWithSidebar = () => {
                       onClick={() => setProductStyle("grid")}
                       aria-label="button for product grid tab"
                       className={`${productStyle === "grid"
-                          ? "bg-blue border-blue text-white"
-                          : "text-dark bg-gray-1 border-gray-3"
+                        ? "bg-blue border-blue text-white"
+                        : "text-dark bg-gray-1 border-gray-3"
                         } flex items-center justify-center w-10.5 h-9 rounded-[5px] border ease-out duration-200 hover:bg-blue hover:border-blue hover:text-white`}
                     >
                       <svg
@@ -238,8 +248,8 @@ const ShopWithSidebar = () => {
                       onClick={() => setProductStyle("list")}
                       aria-label="button for product list tab"
                       className={`${productStyle === "list"
-                          ? "bg-blue border-blue text-white"
-                          : "text-dark bg-gray-1 border-gray-3"
+                        ? "bg-blue border-blue text-white"
+                        : "text-dark bg-gray-1 border-gray-3"
                         } flex items-center justify-center w-10.5 h-9 rounded-[5px] border ease-out duration-200 hover:bg-blue hover:border-blue hover:text-white`}
                     >
                       <svg
@@ -271,11 +281,11 @@ const ShopWithSidebar = () => {
               {/* <!-- Products Grid Tab Content Start --> */}
               <div
                 className={`${productStyle === "grid"
-                    ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-7.5 gap-y-9"
-                    : "flex flex-col gap-7.5"
+                  ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-7.5 gap-y-9"
+                  : "flex flex-col gap-7.5"
                   }`}
               >
-                {shopData.map((item, key) =>
+                {displayedProducts.map((item, key) =>
                   productStyle === "grid" ? (
                     <SingleGridItem item={item} key={key} />
                   ) : (

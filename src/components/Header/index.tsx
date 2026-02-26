@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import CustomSelect from "./CustomSelect";
 import { menuData } from "./menuData";
@@ -11,12 +11,28 @@ import { useCartModalContext } from "@/app/context/CartSidebarModalContext";
 import Image from "next/image";
 import { useLanguage } from "@/hooks/useLanguage";
 import { formatCurrency } from "@/utils/formatCurrency";
+import { useSession, signOut } from "next-auth/react";
+import { Category } from "@/types/category";
 
-const Header = () => {
+const Header = ({ categories = [] }: { categories?: Category[] }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const { data: session, status } = useSession();
   const { openCartModal } = useCartModalContext();
+
+  // Đóng dropdown khi click ra ngoài
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setUserDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const product = useAppSelector((state) => state.cartReducer.items);
   const totalPrice = useSelector(selectTotalPrice);
@@ -42,13 +58,10 @@ const Header = () => {
 
   const options = [
     { label: t.allCategories, value: "0" },
-    { label: t.chair, value: "1" },
-    { label: t.table, value: "2" },
-    { label: t.cabinet, value: "3" },
-    { label: t.bed, value: "4" },
-    { label: t.shelf, value: "5" },
-    { label: t.sofa, value: "6" },
-    { label: t.lamp, value: "7" },
+    ...categories.map((cat) => ({
+      label: cat.title,
+      value: cat._id,
+    })),
   ];
 
   return (
@@ -74,47 +87,8 @@ const Header = () => {
               />
             </Link>
 
-            <div className="max-w-[475px] w-full">
-              <form>
-                <div className="flex items-center">
-                  <CustomSelect options={options} />
-
-                  <div className="relative max-w-[333px] sm:min-w-[333px] w-full">
-                    {/* <!-- divider --> */}
-                    <span className="absolute left-0 top-1/2 -translate-y-1/2 inline-block w-px h-5.5 bg-gray-4"></span>
-                    <input
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      value={searchQuery}
-                      type="search"
-                      name="search"
-                      id="search"
-                      placeholder={t.searchPlaceholder}
-                      autoComplete="off"
-                      className="custom-search w-full rounded-r-[5px] bg-gray-1 !border-l-0 border border-gray-3 py-2.5 pl-4 pr-10 outline-none ease-in duration-200"
-                    />
-
-                    <button
-                      id="search-btn"
-                      aria-label={t.search}
-                      className="flex items-center justify-center absolute right-3 top-1/2 -translate-y-1/2 ease-in duration-200 hover:text-blue"
-                    >
-                      <svg
-                        className="fill-current"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17.2687 15.6656L12.6281 11.8969C14.5406 9.28123 14.3437 5.5406 11.9531 3.1781C10.6875 1.91248 8.99995 1.20935 7.19995 1.20935C5.39995 1.20935 3.71245 1.91248 2.44683 3.1781C-0.168799 5.79373 -0.168799 10.0687 2.44683 12.6844C3.71245 13.95 5.39995 14.6531 7.19995 14.6531C8.91558 14.6531 10.5187 14.0062 11.7843 12.8531L16.4812 16.65C16.5937 16.7344 16.7343 16.7906 16.875 16.7906C17.0718 16.7906 17.2406 16.7062 17.3531 16.5656C17.5781 16.2844 17.55 15.8906 17.2687 15.6656ZM7.19995 13.3875C5.73745 13.3875 4.38745 12.825 3.34683 11.7844C1.20933 9.64685 1.20933 6.18748 3.34683 4.0781C4.38745 3.03748 5.73745 2.47498 7.19995 2.47498C8.66245 2.47498 10.0125 3.03748 11.0531 4.0781C13.1906 6.2156 13.1906 9.67498 11.0531 11.7844C10.0406 12.825 8.66245 13.3875 7.19995 13.3875Z"
-                          fill=""
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </form>
+            <div className="max-w-[475px] w-full hidden">
+              {/* Search bar removed by user request */}
             </div>
           </div>
 
@@ -151,7 +125,7 @@ const Header = () => {
                   {t.customerService}
                 </span>
                 <p className="font-medium text-custom-sm text-dark">
-                  (+84) 0123-456-789
+                  (+84) 0983708273
                 </p>
               </div>
             </div>
@@ -161,37 +135,88 @@ const Header = () => {
 
             <div className="flex w-full lg:w-auto justify-between items-center gap-5">
               <div className="flex items-center gap-5">
-                <Link href="/signin" className="flex items-center gap-2.5">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M12 1.25C9.37666 1.25 7.25001 3.37665 7.25001 6C7.25001 8.62335 9.37666 10.75 12 10.75C14.6234 10.75 16.75 8.62335 16.75 6C16.75 3.37665 14.6234 1.25 12 1.25ZM8.75001 6C8.75001 4.20507 10.2051 2.75 12 2.75C13.7949 2.75 15.25 4.20507 15.25 6C15.25 7.79493 13.7949 9.25 12 9.25C10.2051 9.25 8.75001 7.79493 8.75001 6Z"
-                      fill="#3C50E0"
-                    />
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M12 12.25C9.68646 12.25 7.55494 12.7759 5.97546 13.6643C4.4195 14.5396 3.25001 15.8661 3.25001 17.5L3.24995 17.602C3.24882 18.7638 3.2474 20.222 4.52642 21.2635C5.15589 21.7761 6.03649 22.1406 7.22622 22.3815C8.41927 22.6229 9.97424 22.75 12 22.75C14.0258 22.75 15.5808 22.6229 16.7738 22.3815C17.9635 22.1406 18.8441 21.7761 19.4736 21.2635C20.7526 20.222 20.7512 18.7638 20.7501 17.602L20.75 17.5C20.75 15.8661 19.5805 14.5396 18.0246 13.6643C16.4451 12.7759 14.3136 12.25 12 12.25ZM4.75001 17.5C4.75001 16.6487 5.37139 15.7251 6.71085 14.9717C8.02681 14.2315 9.89529 13.75 12 13.75C14.1047 13.75 15.9732 14.2315 17.2892 14.9717C18.6286 15.7251 19.25 16.6487 19.25 17.5C19.25 18.8078 19.2097 19.544 18.5264 20.1004C18.1559 20.4022 17.5365 20.6967 16.4762 20.9113C15.4193 21.1252 13.9742 21.25 12 21.25C10.0258 21.25 8.58075 21.1252 7.5238 20.9113C6.46354 20.6967 5.84413 20.4022 5.4736 20.1004C4.79033 19.544 4.75001 18.8078 4.75001 17.5Z"
-                      fill="#3C50E0"
-                    />
-                  </svg>
+                {/* Account section */}
+                {status === "authenticated" && session?.user ? (
+                  // Đã đăng nhập: hiện avatar + tên, click mở dropdown
+                  <div className="relative" ref={dropdownRef}>
+                    <button
+                      onClick={() => setUserDropdownOpen(!userDropdownOpen)}
+                      className="flex items-center gap-2.5 focus:outline-none"
+                    >
+                      {session.user.image ? (
+                        <Image
+                          src={session.user.image}
+                          alt={session.user.name || "User"}
+                          width={32}
+                          height={32}
+                          className="rounded-full object-cover w-8 h-8"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 rounded-full bg-blue flex items-center justify-center text-white text-sm font-semibold">
+                          {session.user.name?.charAt(0).toUpperCase() || "U"}
+                        </div>
+                      )}
+                      <div className="hidden sm:block text-left">
+                        <span className="block text-2xs text-dark-4 uppercase">{t.account}</span>
+                        <p className="font-medium text-custom-sm text-dark max-w-[100px] truncate">
+                          {session.user.name || session.user.email}
+                        </p>
+                      </div>
+                    </button>
 
-                  <div>
-                    <span className="block text-2xs text-dark-4 uppercase">
-                      {t.account}
-                    </span>
-                    <p className="font-medium text-custom-sm text-dark">
-                      {t.login}
-                    </p>
+                    {/* Dropdown menu */}
+                    {userDropdownOpen && (
+                      <div className="absolute right-0 top-full mt-2 w-44 bg-white rounded-lg shadow-lg border border-gray-3 z-50 overflow-hidden">
+                        <Link
+                          href="/my-account"
+                          onClick={() => setUserDropdownOpen(false)}
+                          className="block px-4 py-2.5 text-sm text-dark hover:bg-gray-1 hover:text-blue transition-colors"
+                        >
+                          My Account
+                        </Link>
+                        <button
+                          onClick={() => { setUserDropdownOpen(false); signOut({ callbackUrl: "/" }); }}
+                          className="w-full text-left block px-4 py-2.5 text-sm text-dark hover:bg-gray-1 hover:text-red transition-colors border-t border-gray-3"
+                        >
+                          Sign Out
+                        </button>
+                      </div>
+                    )}
                   </div>
-                </Link>
+                ) : (
+                  // Chưa đăng nhập: hiện link đến /signin
+                  <Link href="/signin" className="flex items-center gap-2.5">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M12 1.25C9.37666 1.25 7.25001 3.37665 7.25001 6C7.25001 8.62335 9.37666 10.75 12 10.75C14.6234 10.75 16.75 8.62335 16.75 6C16.75 3.37665 14.6234 1.25 12 1.25ZM8.75001 6C8.75001 4.20507 10.2051 2.75 12 2.75C13.7949 2.75 15.25 4.20507 15.25 6C15.25 7.79493 13.7949 9.25 12 9.25C10.2051 9.25 8.75001 7.79493 8.75001 6Z"
+                        fill="#3C50E0"
+                      />
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M12 12.25C9.68646 12.25 7.55494 12.7759 5.97546 13.6643C4.4195 14.5396 3.25001 15.8661 3.25001 17.5L3.24995 17.602C3.24882 18.7638 3.2474 20.222 4.52642 21.2635C5.15589 21.7761 6.03649 22.1406 7.22622 22.3815C8.41927 22.6229 9.97424 22.75 12 22.75C14.0258 22.75 15.5808 22.6229 16.7738 22.3815C17.9635 22.1406 18.8441 21.7761 19.4736 21.2635C20.7526 20.222 20.7512 18.7638 20.7501 17.602L20.75 17.5C20.75 15.8661 19.5805 14.5396 18.0246 13.6643C16.4451 12.7759 14.3136 12.25 12 12.25ZM4.75001 17.5C4.75001 16.6487 5.37139 15.7251 6.71085 14.9717C8.02681 14.2315 9.89529 13.75 12 13.75C14.1047 13.75 15.9732 14.2315 17.2892 14.9717C18.6286 15.7251 19.25 16.6487 19.25 17.5C19.25 18.8078 19.2097 19.544 18.5264 20.1004C18.1559 20.4022 17.5365 20.6967 16.4762 20.9113C15.4193 21.1252 13.9742 21.25 12 21.25C10.0258 21.25 8.58075 21.1252 7.5238 20.9113C6.46354 20.6967 5.84413 20.4022 5.4736 20.1004C4.79033 19.544 4.75001 18.8078 4.75001 17.5Z"
+                        fill="#3C50E0"
+                      />
+                    </svg>
+
+                    <div>
+                      <span className="block text-2xs text-dark-4 uppercase">
+                        {t.account}
+                      </span>
+                      <p className="font-medium text-custom-sm text-dark">
+                        {t.login}
+                      </p>
+                    </div>
+                  </Link>
+                )}
 
                 <button
                   onClick={handleOpenCartModal}
@@ -330,31 +355,6 @@ const Header = () => {
             {/* // <!--=== Nav Right Start ===--> */}
             <div className="hidden xl:block">
               <ul className="flex items-center gap-5.5">
-                <li className="py-4">
-                  <a
-                    href="#"
-                    className="flex items-center gap-1.5 font-medium text-custom-sm text-dark hover:text-blue"
-                  >
-                    <svg
-                      className="fill-current"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.45313 7.55556H1.70313V7.55556L2.45313 7.55556ZM2.45313 8.66667L1.92488 9.19908C2.21729 9.4892 2.68896 9.4892 2.98137 9.19908L2.45313 8.66667ZM4.10124 8.08797C4.39528 7.79623 4.39715 7.32135 4.10541 7.02731C3.81367 6.73327 3.3388 6.73141 3.04476 7.02315L4.10124 8.08797ZM1.86149 7.02315C1.56745 6.73141 1.09258 6.73327 0.800843 7.02731C0.509102 7.32135 0.510968 7.79623 0.805009 8.08797L1.86149 7.02315ZM12.1973 5.05946C12.4143 5.41232 12.8762 5.52252 13.229 5.30558C13.5819 5.08865 13.6921 4.62674 13.4752 4.27388L12.1973 5.05946ZM8.0525 1.25C4.5514 1.25 1.70313 4.06755 1.70313 7.55556H3.20313C3.20313 4.90706 5.3687 2.75 8.0525 2.75V1.25ZM1.70313 7.55556L1.70313 8.66667L3.20313 8.66667L3.20313 7.55556L1.70313 7.55556ZM2.98137 9.19908L4.10124 8.08797L3.04476 7.02315L1.92488 8.13426L2.98137 9.19908ZM2.98137 8.13426L1.86149 7.02315L0.805009 8.08797L1.92488 9.19908L2.98137 8.13426ZM13.4752 4.27388C12.3603 2.46049 10.3479 1.25 8.0525 1.25V2.75C9.80904 2.75 11.346 3.67466 12.1973 5.05946L13.4752 4.27388Z"
-                        fill=""
-                      />
-                      <path
-                        d="M13.5427 7.33337L14.0699 6.79996C13.7777 6.51118 13.3076 6.51118 13.0155 6.79996L13.5427 7.33337ZM11.8913 7.91107C11.5967 8.20225 11.5939 8.67711 11.8851 8.97171C12.1763 9.26631 12.6512 9.26908 12.9458 8.9779L11.8913 7.91107ZM14.1396 8.9779C14.4342 9.26908 14.9091 9.26631 15.2003 8.97171C15.4914 8.67711 15.4887 8.20225 15.1941 7.91107L14.1396 8.9779ZM3.75812 10.9395C3.54059 10.587 3.07849 10.4776 2.72599 10.6951C2.3735 10.9127 2.26409 11.3748 2.48163 11.7273L3.75812 10.9395ZM7.9219 14.75C11.4321 14.75 14.2927 11.9352 14.2927 8.44449H12.7927C12.7927 11.0903 10.6202 13.25 7.9219 13.25V14.75ZM14.2927 8.44449V7.33337H12.7927V8.44449H14.2927ZM13.0155 6.79996L11.8913 7.91107L12.9458 8.9779L14.0699 7.86679L13.0155 6.79996ZM13.0155 7.86679L14.1396 8.9779L15.1941 7.91107L14.0699 6.79996L13.0155 7.86679ZM2.48163 11.7273C3.60082 13.5408 5.62007 14.75 7.9219 14.75V13.25C6.15627 13.25 4.61261 12.3241 3.75812 10.9395L2.48163 11.7273Z"
-                        fill=""
-                      />
-                    </svg>
-                    {t.recentlyViewed}
-                  </a>
-                </li>
 
                 <li className="py-4">
                   <Link

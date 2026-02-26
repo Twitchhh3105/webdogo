@@ -10,21 +10,21 @@ const SingleItem = ({ item, removeItemFromCart }) => {
   const { t } = useLanguage();
 
   const handleRemoveFromCart = () => {
-    dispatch(removeItemFromCart(item.id));
+    dispatch(removeItemFromCart(item._id));
   };
 
   return (
     <div className="flex items-center justify-between gap-5">
       <div className="w-full flex items-center gap-6">
-        <div className="flex items-center justify-center rounded-[10px] bg-gray-3 max-w-[90px] w-full h-22.5">
-          <Image src={item.imgs?.thumbnails[0]} alt="product" width={100} height={100} />
+        <div className="flex items-center justify-center rounded-[10px] bg-gray-3 max-w-[90px] w-full h-22.5 overflow-hidden">
+          <Image src={item.imageUrl || item.imgs?.thumbnails[0] || "/images/products/product-1-sm-1.png"} alt="product" width={100} height={100} className="object-cover" />
         </div>
 
         <div>
           <h3 className="font-medium text-dark mb-1 ease-out duration-200 hover:text-blue">
             <a href="#"> {item.title} </a>
           </h3>
-          <p className="text-custom-sm">{t.price}: {formatCurrency(item.discountedPrice)}</p>
+          <p className="text-custom-sm">{t.price}: {item.discountedPrice ? formatCurrency(item.discountedPrice) : formatCurrency(item.price)}</p>
         </div>
       </div>
 

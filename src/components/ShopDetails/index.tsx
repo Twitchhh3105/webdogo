@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import Breadcrumb from "../Common/Breadcrumb";
 import Image from "next/image";
 import Newsletter from "../Common/Newsletter";
-import RecentlyViewdItems from "./RecentlyViewd";
 import { usePreviewSlider } from "@/app/context/PreviewSliderContext";
 import { useAppSelector } from "@/redux/store";
 import { useLanguage } from "@/hooks/useLanguage";
 import { formatCurrency } from "@/utils/formatCurrency";
 import shopData from "../Shop/shopData";
+import { Product } from "@/types/product";
 
-const ShopDetails = () => {
+const ShopDetails = ({ product: propProduct }: { product?: Product }) => {
   const { t } = useLanguage();
   const [activeColor, setActiveColor] = useState("");
   const { openPreviewModal } = usePreviewSlider();
@@ -30,8 +30,8 @@ const ShopDetails = () => {
     (state) => state.productDetailsReducer.value
   );
 
-  // Fallback to first product if nothing in state
-  const product = productFromStorage.title !== "" ? productFromStorage : shopData[0];
+  // Fallback to propProduct, then Redux state, then first product if nothing in state
+  const product = propProduct || (productFromStorage.title !== "" ? productFromStorage : shopData[0]);
 
   useEffect(() => {
     if (product.color && !activeColor) {
@@ -91,9 +91,6 @@ const ShopDetails = () => {
                 <h2 className="font-bold text-2xl sm:text-3xl xl:text-4xl text-dark leading-tight">
                   {product.title}
                 </h2>
-                <div className="shrink-0 inline-flex font-semibold text-custom-sm text-white bg-red rounded-full py-1 px-3 shadow-sm">
-                  -30%
-                </div>
               </div>
 
               <div className="flex flex-wrap items-center gap-5.5 mb-6">
@@ -115,18 +112,16 @@ const ShopDetails = () => {
               </div>
 
               <div className="flex items-baseline gap-4 mb-8">
-                <span className="text-3xl font-bold text-blue">{formatCurrency(product.discountedPrice)}</span>
-                <span className="text-lg text-dark-4 line-through italic opacity-60">{formatCurrency(product.price)}</span>
+                {product.discountedPrice ? (
+                  <>
+                    <span className="text-3xl font-bold text-blue">{formatCurrency(product.discountedPrice)}</span>
+                    <span className="text-lg text-dark-4 line-through italic opacity-60">{formatCurrency(product.price)}</span>
+                  </>
+                ) : (
+                  <span className="text-3xl font-bold text-blue">{formatCurrency(product.price)}</span>
+                )}
               </div>
 
-              <ul className="flex flex-col gap-3 mb-8 bg-gray-50 p-4 rounded-xl">
-                <li className="flex items-center gap-3 text-dark-4">
-                  <span className="text-blue bg-white p-1 rounded-full shadow-sm">✓</span> {t.freeDelivery}
-                </li>
-                <li className="flex items-center gap-3 text-dark-4">
-                  <span className="text-blue bg-white p-1 rounded-full shadow-sm">✓</span> {t.useCode}: <span className="font-bold text-dark">NEURO30</span>
-                </li>
-              </ul>
 
               <form onSubmit={(e) => e.preventDefault()}>
                 <div className="flex flex-col gap-6 border-t border-gray-3 pt-8 pb-10">
@@ -280,7 +275,6 @@ const ShopDetails = () => {
         </div>
       </section>
 
-      <RecentlyViewdItems />
       <Newsletter />
     </>
   );

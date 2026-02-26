@@ -117,7 +117,7 @@ export const vi = {
     followUs: "Theo dõi chúng tôi",
     allRightsReserved: "Đã đăng ký bản quyền",
     weAccept: "Thanh toán an toàn",
-    footerAddress: "123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh, Việt Nam.",
+    footerAddress: "Ngõ 3 Nguyễn Văn Huyên Quận Cầu Giấy, Hà Nội, Việt Nam.",
     downloadOn: "Tải trên",
     getInOn: "Tải trên",
 

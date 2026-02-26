@@ -240,12 +240,20 @@ const QuickViewModal = () => {
                   </h4>
 
                   <span className="flex items-center gap-2">
-                    <span className="font-semibold text-dark text-xl xl:text-heading-4">
-                      {formatCurrency(product.discountedPrice)}
-                    </span>
-                    <span className="font-medium text-dark-4 text-lg xl:text-2xl line-through">
-                      {formatCurrency(product.price)}
-                    </span>
+                    {product.discountedPrice ? (
+                      <>
+                        <span className="font-semibold text-dark text-xl xl:text-heading-4">
+                          {formatCurrency(product.discountedPrice)}
+                        </span>
+                        <span className="font-medium text-dark-4 text-lg xl:text-2xl line-through">
+                          {formatCurrency(product.price)}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="font-semibold text-dark text-xl xl:text-heading-4">
+                        {formatCurrency(product.price)}
+                      </span>
+                    )}
                   </span>
                 </div>
 

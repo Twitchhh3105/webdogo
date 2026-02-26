@@ -1,8 +1,80 @@
+"use client";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
+  const router = useRouter();
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSignup = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+
+    // Client-side validation
+    if (!data.name || !data.email || !data.password || !data.confirmPassword) {
+      setError("Vui lòng điền đầy đủ thông tin.");
+      return;
+    }
+
+    if (data.password.length < 6) {
+      setError("Mật khẩu phải có ít nhất 6 ký tự.");
+      return;
+    }
+
+    if (data.password !== data.confirmPassword) {
+      setError("Mật khẩu nhập lại không khớp.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        setError(result.error || "Đã xảy ra lỗi, vui lòng thử lại.");
+        return;
+      }
+
+      // Đăng ký thành công → tự động đăng nhập
+      const signInResult = await signIn("credentials", {
+        email: data.email,
+        password: data.password,
+        redirect: false,
+      });
+
+      if (signInResult?.error) {
+        // Đăng ký thành công nhưng không tự đăng nhập được → về trang signin
+        router.push("/signin");
+      } else {
+        router.push("/");
+      }
+    } catch {
+      setError("Không thể kết nối. Vui lòng thử lại.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Breadcrumb title={"Signup"} pages={["Signup"]} />
@@ -17,7 +89,11 @@ const Signup = () => {
             </div>
 
             <div className="flex flex-col gap-4.5">
-              <button className="flex justify-center items-center gap-3.5 rounded-lg border border-gray-3 bg-gray-1 p-3 ease-out duration-200 hover:bg-gray-2">
+              <button
+                type="button"
+                onClick={() => signIn("google", { callbackUrl: "/" })}
+                className="flex justify-center items-center gap-3.5 rounded-lg border border-gray-3 bg-gray-1 p-3 ease-out duration-200 hover:bg-gray-2"
+              >
                 <svg
                   width="20"
                   height="20"
@@ -64,7 +140,10 @@ const Signup = () => {
                 Sign Up with Google
               </button>
 
-              <button className="flex justify-center items-center gap-3.5 rounded-lg border border-gray-3 bg-gray-1 p-3 ease-out duration-200 hover:bg-gray-2">
+              <button
+                type="button"
+                className="flex justify-center items-center gap-3.5 rounded-lg border border-gray-3 bg-gray-1 p-3 ease-out duration-200 hover:bg-gray-2"
+              >
                 <svg
                   width="22"
                   height="22"
@@ -87,7 +166,14 @@ const Signup = () => {
             </span>
 
             <div className="mt-5.5">
-              <form>
+              <form onSubmit={handleSignup}>
+                {/* Error message */}
+                {error && (
+                  <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm">
+                    {error}
+                  </div>
+                )}
+
                 <div className="mb-5">
                   <label htmlFor="name" className="block mb-2.5">
                     Full Name <span className="text-red">*</span>
@@ -98,7 +184,10 @@ const Signup = () => {
                     name="name"
                     id="name"
                     placeholder="Enter your full name"
+                    value={data.name}
+                    onChange={(e) => setData({ ...data, name: e.target.value })}
                     className="rounded-lg border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-3 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                    disabled={loading}
                   />
                 </div>
 
@@ -112,7 +201,10 @@ const Signup = () => {
                     name="email"
                     id="email"
                     placeholder="Enter your email address"
+                    value={data.email}
+                    onChange={(e) => setData({ ...data, email: e.target.value })}
                     className="rounded-lg border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-3 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                    disabled={loading}
                   />
                 </div>
 
@@ -126,8 +218,13 @@ const Signup = () => {
                     name="password"
                     id="password"
                     placeholder="Enter your password"
-                    autoComplete="on"
+                    autoComplete="new-password"
+                    value={data.password}
+                    onChange={(e) =>
+                      setData({ ...data, password: e.target.value })
+                    }
                     className="rounded-lg border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-3 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                    disabled={loading}
                   />
                 </div>
 
@@ -141,16 +238,22 @@ const Signup = () => {
                     name="re-type-password"
                     id="re-type-password"
                     placeholder="Re-type your password"
-                    autoComplete="on"
+                    autoComplete="new-password"
+                    value={data.confirmPassword}
+                    onChange={(e) =>
+                      setData({ ...data, confirmPassword: e.target.value })
+                    }
                     className="rounded-lg border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-3 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                    disabled={loading}
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full flex justify-center font-medium text-white bg-dark py-3 px-6 rounded-lg ease-out duration-200 hover:bg-blue mt-7.5"
+                  disabled={loading}
+                  className="w-full flex justify-center font-medium text-white bg-dark py-3 px-6 rounded-lg ease-out duration-200 hover:bg-blue mt-7.5 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Create Account
+                  {loading ? "Đang tạo tài khoản..." : "Create Account"}
                 </button>
 
                 <p className="text-center mt-6">

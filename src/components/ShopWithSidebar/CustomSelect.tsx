@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const CustomSelect = ({ options }) => {
+const CustomSelect = ({ options, onChange }: { options: any[], onChange?: (value: any) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0]);
-  const selectRef = useRef(null);
+  const selectRef = useRef<HTMLDivElement>(null);
 
   // Function to close the dropdown when a click occurs outside the component
   const handleClickOutside = (event) => {
@@ -28,6 +28,9 @@ const CustomSelect = ({ options }) => {
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
+    if (onChange) {
+      onChange(option);
+    }
     toggleDropdown();
   };
 
@@ -37,21 +40,19 @@ const CustomSelect = ({ options }) => {
       ref={selectRef}
     >
       <div
-        className={`select-selected whitespace-nowrap ${
-          isOpen ? "select-arrow-active" : ""
-        }`}
+        className={`select-selected whitespace-nowrap ${isOpen ? "select-arrow-active" : ""
+          }`}
         onClick={toggleDropdown}
       >
         {selectedOption.label}
       </div>
-      <div className={`select-items ${isOpen ? "" : "select-hide"}`}>
-        {options.slice(1).map((option, index) => (
+      <div className={`select-items z-50 ${isOpen ? "" : "select-hide"}`}>
+        {options.map((option, index) => (
           <div
             key={index}
             onClick={() => handleOptionClick(option)}
-            className={`select-item ${
-              selectedOption === option ? "same-as-selected" : ""
-            }`}
+            className={`select-item ${selectedOption === option ? "same-as-selected bg-gray-2" : ""
+              }`}
           >
             {option.label}
           </div>

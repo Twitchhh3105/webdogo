@@ -1,5 +1,9 @@
 export type Category = {
+  _id: string;
   title: string;
-  id: number;
-  img: string;
+  imageUrl?: string;
+
+  // Legacy fields
+  id?: number;
+  img?: string;
 };

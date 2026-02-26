@@ -7,6 +7,7 @@ const shopData: Product[] = [
     price: 3500000,
     discountedPrice: 2500000,
     id: 1,
+    _id: "1",
     imgs: {
       thumbnails: [
         "/images/products/product-1-sm-1.png",
@@ -31,6 +32,7 @@ const shopData: Product[] = [
     price: 12500000,
     discountedPrice: 8900000,
     id: 2,
+    _id: "2",
     imgs: {
       thumbnails: [
         "/images/products/product-2-sm-1.png",
@@ -55,6 +57,7 @@ const shopData: Product[] = [
     price: 18000000,
     discountedPrice: 12500000,
     id: 3,
+    _id: "3",
     imgs: {
       thumbnails: [
         "/images/products/product-3-sm-1.png",
@@ -79,6 +82,7 @@ const shopData: Product[] = [
     price: 4500000,
     discountedPrice: 3200000,
     id: 4,
+    _id: "4",
     imgs: {
       thumbnails: [
         "/images/products/product-4-sm-1.png",
@@ -103,6 +107,7 @@ const shopData: Product[] = [
     price: 22000000,
     discountedPrice: 15800000,
     id: 5,
+    _id: "5",
     imgs: {
       thumbnails: [
         "/images/products/product-5-sm-1.png",
@@ -127,6 +132,7 @@ const shopData: Product[] = [
     price: 13500000,
     discountedPrice: 9500000,
     id: 6,
+    _id: "6",
     imgs: {
       thumbnails: [
         "/images/products/product-6-sm-1.png",
@@ -151,6 +157,7 @@ const shopData: Product[] = [
     price: 5800000,
     discountedPrice: 4200000,
     id: 7,
+    _id: "7",
     imgs: {
       thumbnails: [
         "/images/products/product-7-sm-1.png",
@@ -175,6 +182,7 @@ const shopData: Product[] = [
     price: 2800000,
     discountedPrice: 1950000,
     id: 8,
+    _id: "8",
     imgs: {
       thumbnails: [
         "/images/products/product-8-sm-1.png",

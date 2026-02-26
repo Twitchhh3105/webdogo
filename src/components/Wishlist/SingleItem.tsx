@@ -6,12 +6,13 @@ import { removeItemFromWishlist } from "@/redux/features/wishlist-slice";
 import { addItemToCart } from "@/redux/features/cart-slice";
 
 import Image from "next/image";
+import { formatCurrency } from "@/utils/formatCurrency";
 
 const SingleItem = ({ item }) => {
   const dispatch = useDispatch<AppDispatch>();
 
   const handleRemoveFromWishlist = () => {
-    dispatch(removeItemFromWishlist(item.id));
+    dispatch(removeItemFromWishlist(item._id));
   };
 
   const handleAddToCart = () => {
@@ -56,8 +57,8 @@ const SingleItem = ({ item }) => {
       <div className="min-w-[387px]">
         <div className="flex items-center justify-between gap-5">
           <div className="w-full flex items-center gap-5.5">
-            <div className="flex items-center justify-center rounded-[5px] bg-gray-2 max-w-[80px] w-full h-17.5">
-              <Image src={item.imgs?.thumbnails[0]} alt="product" width={200} height={200} />
+            <div className="flex items-center justify-center rounded-[5px] bg-gray-2 max-w-[80px] w-full h-17.5 overflow-hidden">
+              <Image src={item.imageUrl || item.imgs?.thumbnails[0] || "/images/products/product-1-sm-1.png"} alt="product" width={200} height={200} className="object-cover" />
             </div>
 
             <div>
@@ -70,7 +71,7 @@ const SingleItem = ({ item }) => {
       </div>
 
       <div className="min-w-[205px]">
-        <p className="text-dark">${item.discountedPrice}</p>
+        <p className="text-dark">{item.discountedPrice ? formatCurrency(item.discountedPrice) : formatCurrency(item.price)}</p>
       </div>
 
       <div className="min-w-[265px]">

@@ -7,8 +7,9 @@ import data from "./categoryData";
 import "swiper/css/navigation";
 import "swiper/css";
 import SingleItem from "./SingleItem";
+import { Category } from "@/types/category";
 
-const Categories = () => {
+const Categories = ({ categories }: { categories: Category[] }) => {
   const sliderRef = useRef(null);
 
   const handlePrev = useCallback(() => {
@@ -133,7 +134,7 @@ const Categories = () => {
               },
             }}
           >
-            {data.map((item, key) => (
+            {categories.map((item, key) => (
               <SwiperSlide key={key}>
                 <SingleItem item={item} />
               </SwiperSlide>
