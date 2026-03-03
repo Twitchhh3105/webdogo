@@ -1,0 +1,254 @@
+[2026-03-03T07:23:14.643Z] Sanity Project ID: l12jerrf
+[2026-03-03T07:23:14.644Z] Sanity Dataset: production
+[2026-03-03T07:23:14.644Z] Token present: true
+[2026-03-03T07:23:14.645Z] Starting image upload to Sanity...
+[2026-03-03T07:23:15.201Z] Connection test OK. Sample product: AYpq9JnWExjNvV7jSnPpxs
+[2026-03-03T07:23:15.202Z] 
+--- [1/23] ---
+[2026-03-03T07:23:15.202Z] Processing product: AYpq9JnWExjNvV7jSnPpxs
+[2026-03-03T07:23:15.203Z]   Found 7 images in "dongodecaycanh"
+[2026-03-03T07:23:17.169Z]   Uploaded: image1.png -> image-139350d8322c5639dd1179d60bc6bfc6b9f0e4b2-757x757-webp
+[2026-03-03T07:23:21.085Z]   Uploaded: image2.png -> image-1cd37ef60aed39e12f602475ba3350df4671f95c-537x537-webp
+[2026-03-03T07:23:22.658Z]   Uploaded: image3.png -> image-010b9bdbe6c40988483aca98fcc43ebc30dea6e9-522x522-webp
+[2026-03-03T07:23:24.572Z]   Uploaded: image4.png -> image-533c306bfc6035390564435607a3cc8f1023ddf1-748x748-webp
+[2026-03-03T07:23:27.122Z]   Uploaded: image5.png -> image-bb105145b44c2af6086943c7c0ca360ef5e4b7a4-597x597-webp
+[2026-03-03T07:23:29.507Z]   Uploaded: image6.png -> image-c38d7d64f2c44860411008f1065d2841528f91b4-800x800-webp
+[2026-03-03T07:23:31.526Z]   Uploaded: image7.png -> image-c7522a2b94a96e60a03ab9e2eb74c90d0ad23276-601x601-webp
+[2026-03-03T07:23:32.337Z]   SUCCESS: Updated product with 7 images
+[2026-03-03T07:23:32.337Z] 
+--- [2/23] ---
+[2026-03-03T07:23:32.338Z] Processing product: AYpq9JnWExjNvV7jSnPqGG
+[2026-03-03T07:23:32.338Z]   Found 4 images in "caycanbot"
+[2026-03-03T07:23:33.677Z]   Uploaded: image1.png -> image-0cb1ccf4b9b886f3729521255ed01ebe4db72d7f-800x800-webp
+[2026-03-03T07:23:36.061Z]   Uploaded: image2.png -> image-78c57b8be64db0e32846932ebf9961add7bb471f-800x800-webp
+[2026-03-03T07:23:38.369Z]   Uploaded: image3.png -> image-57e5f7165a946f8709f6a662843921234d84d774-600x600-webp
+[2026-03-03T07:23:40.576Z]   Uploaded: image4.png -> image-00e66a4c52c1097bcbe78ad387760bdd6c171834-450x450-webp
+[2026-03-03T07:23:41.382Z]   SUCCESS: Updated product with 4 images
+[2026-03-03T07:23:41.382Z] 
+--- [3/23] ---
+[2026-03-03T07:23:41.382Z] Processing product: AYpq9JnWExjNvV7jSnR3PY
+[2026-03-03T07:23:41.383Z]   Found 9 images in "kedolaptop"
+[2026-03-03T07:23:43.293Z]   Uploaded: image1.png -> image-aa2429be3c23225bfa252cadc5e1fd0ae5e0d9eb-800x800-webp
+[2026-03-03T07:23:44.518Z]   Uploaded: image2.png -> image-1dde45e2fa6831b18a044b8d1cd166bbdb1b077e-800x800-webp
+[2026-03-03T07:23:46.173Z]   Uploaded: image3.png -> image-69bc9513f26877ff46f4f56ae18ab8a804c47e9b-800x800-webp
+[2026-03-03T07:23:48.118Z]   Uploaded: image4.png -> image-aa1cb34f68c7d03943f7d2d4c4dcf873f11e2d73-800x800-webp
+[2026-03-03T07:23:49.770Z]   Uploaded: image5.png -> image-fd98dd49fc2b273e259060b6fbd9e9cc3b597473-800x800-webp
+[2026-03-03T07:23:51.398Z]   Uploaded: image6.png -> image-ccd6668dcad93dff1f4eef7ec2a5f1c79910dbb8-800x800-webp
+[2026-03-03T07:23:52.963Z]   Uploaded: image7.png -> image-fb47569b05666ae2edcafef17d53ca8af0789c25-800x800-webp
+[2026-03-03T07:23:54.718Z]   Uploaded: image8.png -> image-cfc51f478bdf8c3375095fa065cadf92f748bce7-800x800-webp
+[2026-03-03T07:23:56.150Z]   Uploaded: image9.png -> image-faf13e2990d958bd26594048219642596364eade-800x800-webp
+[2026-03-03T07:23:57.462Z]   SUCCESS: Updated product with 9 images
+[2026-03-03T07:23:57.462Z] 
+--- [4/23] ---
+[2026-03-03T07:23:57.463Z] Processing product: AYpq9JnWExjNvV7jSnRFkS
+[2026-03-03T07:23:57.463Z]   Found 6 images in "giatreoquanaothanhdonXL"
+[2026-03-03T07:23:58.757Z]   Uploaded: image1.png -> image-1439876daaefc04f27ae2a1a892eeba717f08279-640x640-webp
+[2026-03-03T07:24:00.586Z]   Uploaded: image2.png -> image-0c511d8565959c006425a8c7ad7fcf049cb6b3d0-640x640-webp
+[2026-03-03T07:24:02.442Z]   Uploaded: image3.png -> image-834511c434cdeffa97561371f64a0fe4a6ae800e-640x640-webp
+[2026-03-03T07:24:03.694Z]   Uploaded: image4.png -> image-d0f7855f50ccc30388bea4d53381490fa874ff63-640x640-webp
+[2026-03-03T07:24:05.577Z]   Uploaded: image5.png -> image-522065c6f13a1f76f700d6b02d221f47422e4768-640x640-webp
+[2026-03-03T07:24:07.616Z]   Uploaded: image6.png -> image-fa94fd6fe0f52255669604c2c63d755b0d3e88f4-640x640-webp
+[2026-03-03T07:24:08.524Z]   SUCCESS: Updated product with 6 images
+[2026-03-03T07:24:08.524Z] 
+--- [5/23] ---
+[2026-03-03T07:24:08.525Z] Processing product: AYpq9JnWExjNvV7jSnRG6W
+[2026-03-03T07:24:08.525Z]   Found 4 images in "mocgotreoquanaogantuong"
+[2026-03-03T07:24:10.432Z]   Uploaded: image1.png -> image-cca73c0e03c76f3497376653c28cd1f6adfb1d63-800x800-webp
+[2026-03-03T07:24:12.624Z]   Uploaded: image2.png -> image-e62d5fafb3331840d52a865260ae008458fbbfb3-605x605-webp
+[2026-03-03T07:24:14.356Z]   Uploaded: image3.png -> image-5b7d7b8f413b554875bfd2009132f95a6f7b9c57-800x800-webp
+[2026-03-03T07:24:16.451Z]   Uploaded: image4.png -> image-de4402e6037dec6bc0bcdaffa1bf4c78b8572929-750x750-webp
+[2026-03-03T07:24:17.547Z]   SUCCESS: Updated product with 4 images
+[2026-03-03T07:24:17.548Z] 
+--- [6/23] ---
+[2026-03-03T07:24:17.548Z] Processing product: AYpq9JnWExjNvV7jSnRIm0
+[2026-03-03T07:24:17.549Z]   Found 4 images in "giatreoquanaothanhdonmautrang"
+[2026-03-03T07:24:19.175Z]   Uploaded: image1.png -> image-b5dca4a9d094f38bcbf06e822f0f983ba81d761e-800x800-webp
+[2026-03-03T07:24:21.669Z]   Uploaded: image2.png -> image-97c158a103962a45f199bec407da272c799ae028-800x800-webp
+[2026-03-03T07:24:23.553Z]   Uploaded: image3.png -> image-d5e737fdfdcda75d7cfdf32898ec6533f3f4d8d7-800x800-webp
+[2026-03-03T07:24:25.286Z]   Uploaded: image4.png -> image-0440edc663f0cd11a236f3e7e46b0fe11ebecbcd-800x800-webp
+[2026-03-03T07:24:26.598Z]   SUCCESS: Updated product with 4 images
+[2026-03-03T07:24:26.598Z] 
+--- [7/23] ---
+[2026-03-03T07:24:26.599Z] Processing product: AYpq9JnWExjNvV7jSnRKCG
+[2026-03-03T07:24:26.599Z]   Found 8 images in "kegotreotuongnhieukichthuoc"
+[2026-03-03T07:24:27.946Z]   Uploaded: image1.png -> image-6dbcc5f1fa83793af1e8ad8e4c6c73b4ec44f3b6-645x645-webp
+[2026-03-03T07:24:29.358Z]   Uploaded: image2.png -> image-7d4a6dbeb543fbd3853794a4af262d61e07e8cac-551x551-webp
+[2026-03-03T07:24:31.713Z]   Uploaded: image3.png -> image-f78b09d7702a48b887ad4bbee99aadc33f518532-499x499-webp
+[2026-03-03T07:24:33.630Z]   Uploaded: image4.png -> image-6ea6f238756eb786ee4f5bbe254a9588af69cc97-911x911-webp
+[2026-03-03T07:24:35.618Z]   Uploaded: image5.png -> image-a207c0c8fd2918ac153317cdc65c25361373ca83-460x460-webp
+[2026-03-03T07:24:36.906Z]   Uploaded: image6.png -> image-b48fadbda82da81f56638ed96bb1777397924bc1-508x508-webp
+[2026-03-03T07:24:38.226Z]   Uploaded: image7.png -> image-ad5ffa7c5d90165ee69ba7b267e7f9bc4a2a03b5-394x394-webp
+[2026-03-03T07:24:39.844Z]   Uploaded: image8.png -> image-fca6263e7332574c6d85eed17bb6c492f52bda45-380x380-webp
+[2026-03-03T07:24:40.673Z]   SUCCESS: Updated product with 8 images
+[2026-03-03T07:24:40.673Z] 
+--- [8/23] ---
+[2026-03-03T07:24:40.674Z] Processing product: AYpq9JnWExjNvV7jSnRKQy
+[2026-03-03T07:24:40.674Z]   Found 6 images in "giatreoquanaothanhdonXL"
+[2026-03-03T07:24:42.361Z]   Uploaded: image1.png -> image-1439876daaefc04f27ae2a1a892eeba717f08279-640x640-webp
+[2026-03-03T07:24:44.192Z]   Uploaded: image2.png -> image-0c511d8565959c006425a8c7ad7fcf049cb6b3d0-640x640-webp
+[2026-03-03T07:24:45.860Z]   Uploaded: image3.png -> image-834511c434cdeffa97561371f64a0fe4a6ae800e-640x640-webp
+[2026-03-03T07:24:47.902Z]   Uploaded: image4.png -> image-d0f7855f50ccc30388bea4d53381490fa874ff63-640x640-webp
+[2026-03-03T07:24:49.170Z]   Uploaded: image5.png -> image-522065c6f13a1f76f700d6b02d221f47422e4768-640x640-webp
+[2026-03-03T07:24:51.223Z]   Uploaded: image6.png -> image-fa94fd6fe0f52255669604c2c63d755b0d3e88f4-640x640-webp
+[2026-03-03T07:24:52.582Z]   SUCCESS: Updated product with 6 images
+[2026-03-03T07:24:52.583Z] 
+--- [9/23] ---
+[2026-03-03T07:24:52.583Z] Processing product: AYpq9JnWExjNvV7jSnRPau
+[2026-03-03T07:24:52.584Z]   Found 1 images in "khuondauphubanggo"
+[2026-03-03T07:24:55.300Z]   Uploaded: image1.png -> image-ca131c28442b4e0dbc756913ff6c8c0b7ae72260-800x800-webp
+[2026-03-03T07:24:56.607Z]   SUCCESS: Updated product with 1 images
+[2026-03-03T07:24:56.608Z] 
+--- [10/23] ---
+[2026-03-03T07:24:56.608Z] Processing product: AYpq9JnWExjNvV7jSnU7z6
+[2026-03-03T07:24:56.609Z]   Found 8 images in "kelaptopmaytinhkemanhinh"
+[2026-03-03T07:24:59.207Z]   Uploaded: image1.png -> image-83c59f4d8d6ec8bbf00abead5f836fc73c8c648e-786x786-webp
+[2026-03-03T07:25:01.270Z]   Uploaded: image2.png -> image-526b21fdb8ecca1367003197abdc6a77be253384-828x828-webp
+[2026-03-03T07:25:03.800Z]   Uploaded: image3.png -> image-d5f1f4f8ae595e5df51f68cee0329f53cea9daf3-735x735-webp
+[2026-03-03T07:25:05.946Z]   Uploaded: image4.png -> image-0978245aa82bc6d30fd657b2e80a78383f28fe7c-800x800-webp
+[2026-03-03T07:25:07.814Z]   Uploaded: image5.png -> image-6d425c052d43c64d627296b111a81edafc90c399-671x671-webp
+[2026-03-03T07:25:09.056Z]   Uploaded: image6.png -> image-3f9929ca3dedada62ed33bbf895c2b49bee0f22f-400x400-webp
+[2026-03-03T07:25:11.437Z]   Uploaded: image7.png -> image-fb700f6c9ed0f4631ff6b21978dd8b70b7255619-736x736-webp
+[2026-03-03T07:25:13.234Z]   Uploaded: image8.png -> image-17b0908322ec30bec862b158a78f562336e2f0e2-720x720-webp
+[2026-03-03T07:25:13.815Z]   SUCCESS: Updated product with 8 images
+[2026-03-03T07:25:13.815Z] 
+--- [11/23] ---
+[2026-03-03T07:25:13.816Z] Processing product: AYpq9JnWExjNvV7jSnUA08
+[2026-03-03T07:25:13.817Z]   Found 8 images in "dongodebinhnuoc2tang"
+[2026-03-03T07:25:15.092Z]   Uploaded: image1.png -> image-5d43d8e42e53f34d34856d06a2e29ca07cd3d006-423x423-webp
+[2026-03-03T07:25:16.920Z]   Uploaded: image2.png -> image-6f0b3315fc6d12c72f3597b0dad7c8beed105fe9-443x443-webp
+[2026-03-03T07:25:19.112Z]   Uploaded: image3.png -> image-861881291cc680b617098ccac5c0bf0484e8b807-418x418-webp
+[2026-03-03T07:25:21.006Z]   Uploaded: image4.png -> image-bd26ae5b097f2699b8c82f0f77ce0d04f5a74420-800x800-webp
+[2026-03-03T07:25:23.144Z]   Uploaded: image5.png -> image-d38293472645f47a9c564fb02f319d07e71f38a0-800x800-webp
+[2026-03-03T07:25:24.634Z]   Uploaded: image6.png -> image-de3b578cd5691038cdace31d7163e97ec5a738be-800x800-webp
+[2026-03-03T07:25:26.436Z]   Uploaded: image7.png -> image-f7386519f72e1d4c1e41e53c76bc195006d57c2e-600x600-webp
+[2026-03-03T07:25:27.901Z]   Uploaded: image8.png -> image-f1c0fa853b8ea3fa53be617241d2029ee036ce11-600x600-webp
+[2026-03-03T07:25:28.891Z]   SUCCESS: Updated product with 8 images
+[2026-03-03T07:25:28.892Z] 
+--- [12/23] ---
+[2026-03-03T07:25:28.892Z] Processing product: AYpq9JnWExjNvV7jSnUHXA
+[2026-03-03T07:25:28.893Z]   Found 6 images in "giagotreotainghe"
+[2026-03-03T07:25:31.626Z]   Uploaded: image1.png -> image-07876c96f47d6daf060ffc79f9a4a06292c8802a-1024x1024-webp
+[2026-03-03T07:25:33.341Z]   Uploaded: image2.png -> image-f8648d0fdb94254101977830b7e92a6532e18978-1024x1024-webp
+[2026-03-03T07:25:35.629Z]   Uploaded: image3.png -> image-e35689e2ab1fed573011332bdd56195a72715564-1024x1024-webp
+[2026-03-03T07:25:37.341Z]   Uploaded: image4.png -> image-8ec268310fb15e7885aba3c4fb6d339f5f3e6f51-1024x1024-webp
+[2026-03-03T07:25:38.733Z]   Uploaded: image5.png -> image-d256d7e5d376116d215655b8eda038c587f859d9-1024x1024-webp
+[2026-03-03T07:25:40.880Z]   Uploaded: image6.png -> image-0d345cb7d524b3151039602805619a811370550e-1024x1024-webp
+[2026-03-03T07:25:41.963Z]   SUCCESS: Updated product with 6 images
+[2026-03-03T07:25:41.963Z] 
+--- [13/23] ---
+[2026-03-03T07:25:41.964Z] Processing product: AYpq9JnWExjNvV7jSnUHwu
+[2026-03-03T07:25:41.964Z]   Found 8 images in "giatreoquanaochuA2tang"
+[2026-03-03T07:25:43.418Z]   Uploaded: image1.png -> image-3f2fc374fc2def72917220fcfa3b3c16f6d03f89-640x640-webp
+[2026-03-03T07:25:44.840Z]   Uploaded: image2.png -> image-b5b888556807e54044c3763da8b3db0139de84dd-640x640-webp
+[2026-03-03T07:25:45.971Z]   Uploaded: image3.png -> image-7062dcf92244b3f8bc84dcb1b855c2c549aea7d2-640x640-webp
+[2026-03-03T07:25:47.144Z]   Uploaded: image4.png -> image-496a38eb7cbb5be5dc11e6c319185bff00368ab9-640x640-webp
+[2026-03-03T07:25:48.464Z]   Uploaded: image5.png -> image-9827a31e6d886709a9ecfc47b0a4c122d315c185-480x640-webp
+[2026-03-03T07:25:49.719Z]   Uploaded: image6.png -> image-fb0c337bc62ba540cb3ea86147fc3a7e2bfe02b4-640x640-webp
+[2026-03-03T07:25:51.663Z]   Uploaded: image7.png -> image-8bd9b10a55f2754e3c51e90aff68c745a11715fb-640x640-webp
+[2026-03-03T07:25:53.182Z]   Uploaded: image8.png -> image-ec8dee55818533b1929e5f19ff59c4b355853da3-800x800-webp
+[2026-03-03T07:25:54.045Z]   SUCCESS: Updated product with 8 images
+[2026-03-03T07:25:54.046Z] 
+--- [14/23] ---
+[2026-03-03T07:25:54.047Z] Processing product: AYpq9JnWExjNvV7jSnUIMe
+[2026-03-03T07:25:54.048Z]   Found 5 images in "giatreoquanaochuA1tang"
+[2026-03-03T07:25:55.420Z]   Uploaded: image1.png -> image-6c4853486670a8edb41dee3134bf585f71064706-640x640-webp
+[2026-03-03T07:25:57.253Z]   Uploaded: image2.png -> image-44e84e13f3eaf3fb9bd7801a40580c9e474ff77b-640x640-webp
+[2026-03-03T07:25:58.950Z]   Uploaded: image3.png -> image-9c175c2987b666e1d0ebbc65861b85b3150eee1d-640x640-webp
+[2026-03-03T07:26:00.311Z]   Uploaded: image4.png -> image-5ed3365363588c17feed2b1ad2783fc527fc787b-640x640-webp
+[2026-03-03T07:26:02.375Z]   Uploaded: image5.png -> image-87f823a6ee4231e29f9e3b630ed809059ef1d4aa-640x640-webp
+[2026-03-03T07:26:03.089Z]   SUCCESS: Updated product with 5 images
+[2026-03-03T07:26:03.089Z] 
+--- [15/23] ---
+[2026-03-03T07:26:03.089Z] Processing product: AYpq9JnWExjNvV7jSnUJfY
+[2026-03-03T07:26:03.090Z]   Found 2 images in "kekinh2tangkieuhan"
+[2026-03-03T07:26:04.373Z]   Uploaded: image1.png -> image-f8c0fb9c3bd448c8272c4fe5b76cf45bd5d00148-640x640-webp
+[2026-03-03T07:26:05.983Z]   Uploaded: image2.png -> image-824c9b80c46d46f7d2a15124df8d2cb67ee4ad79-640x640-webp
+[2026-03-03T07:26:07.122Z]   SUCCESS: Updated product with 2 images
+[2026-03-03T07:26:07.123Z] 
+--- [16/23] ---
+[2026-03-03T07:26:07.123Z] Processing product: LJInH2h67LnJd8VEvrxqwq
+[2026-03-03T07:26:07.124Z]   Found 7 images in "dongodecaycanh"
+[2026-03-03T07:26:08.736Z]   Uploaded: image1.png -> image-139350d8322c5639dd1179d60bc6bfc6b9f0e4b2-757x757-webp
+[2026-03-03T07:26:10.244Z]   Uploaded: image2.png -> image-1cd37ef60aed39e12f602475ba3350df4671f95c-537x537-webp
+[2026-03-03T07:26:12.118Z]   Uploaded: image3.png -> image-010b9bdbe6c40988483aca98fcc43ebc30dea6e9-522x522-webp
+[2026-03-03T07:26:14.364Z]   Uploaded: image4.png -> image-533c306bfc6035390564435607a3cc8f1023ddf1-748x748-webp
+[2026-03-03T07:26:16.626Z]   Uploaded: image5.png -> image-bb105145b44c2af6086943c7c0ca360ef5e4b7a4-597x597-webp
+[2026-03-03T07:26:18.401Z]   Uploaded: image6.png -> image-c38d7d64f2c44860411008f1065d2841528f91b4-800x800-webp
+[2026-03-03T07:26:19.707Z]   Uploaded: image7.png -> image-c7522a2b94a96e60a03ab9e2eb74c90d0ad23276-601x601-webp
+[2026-03-03T07:26:21.037Z]   SUCCESS: Updated product with 7 images
+[2026-03-03T07:26:21.038Z] 
+--- [17/23] ---
+[2026-03-03T07:26:21.038Z] Processing product: LJInH2h67LnJd8VEvrxs4O
+[2026-03-03T07:26:21.039Z]   Found 3 images in "dongodebinhnuoc"
+[2026-03-03T07:26:22.430Z]   Uploaded: image1.png -> image-3bd2206859f13bd0835608d0b69b291b27855545-800x800-webp
+[2026-03-03T07:26:24.094Z]   Uploaded: image2.png -> image-b120539b72ee8765757f72c5f61fbce8fbc7e9c1-800x800-webp
+[2026-03-03T07:26:25.807Z]   Uploaded: image3.png -> image-a403964cf5efb9a32d59bf5f3403ba8e58a0c063-601x601-webp
+[2026-03-03T07:26:27.173Z]   SUCCESS: Updated product with 3 images
+[2026-03-03T07:26:27.173Z] 
+--- [18/23] ---
+[2026-03-03T07:26:27.174Z] Processing product: LJInH2h67LnJd8VEvrxsWq
+[2026-03-03T07:26:27.174Z]   Found 4 images in "conlancanbotbanggo"
+[2026-03-03T07:26:28.705Z]   Uploaded: image1.png -> image-0cb1ccf4b9b886f3729521255ed01ebe4db72d7f-800x800-webp
+[2026-03-03T07:26:31.079Z]   Uploaded: image2.png -> image-abf9929891c5b9c868a5308e446f430a9cbf73d8-800x800-webp
+[2026-03-03T07:26:32.968Z]   Uploaded: image3.png -> image-35b63ff05d4de9f22ca7c7238b5e2b82163eb67c-600x600-webp
+[2026-03-03T07:26:34.995Z]   Uploaded: image4.png -> image-00e66a4c52c1097bcbe78ad387760bdd6c171834-450x450-webp
+[2026-03-03T07:26:36.274Z]   SUCCESS: Updated product with 4 images
+[2026-03-03T07:26:36.275Z] 
+--- [19/23] ---
+[2026-03-03T07:26:36.275Z] Processing product: LJInH2h67LnJd8VEvrxuvQ
+[2026-03-03T07:26:36.276Z]   Found 6 images in "onghutinox"
+[2026-03-03T07:26:38.143Z]   Uploaded: image1.png -> image-8f96862482cf599399f89799b060c68a31f278fe-800x800-webp
+[2026-03-03T07:26:39.708Z]   Uploaded: image2.png -> image-8f9ab8d122a5fc5666e82550d83f558f05a991e2-800x800-webp
+[2026-03-03T07:26:41.183Z]   Uploaded: image3.png -> image-78623007b226579a30ab3255d993ccf2c7d05556-800x800-webp
+[2026-03-03T07:26:42.765Z]   Uploaded: image4.png -> image-1ad77800e534a51a43f60ac60f888dd9f350dad2-800x800-webp
+[2026-03-03T07:26:45.149Z]   Uploaded: image5.png -> image-74b4f2ee7496c0dc646cbf8e15a9b0c7f4fbf424-800x800-webp
+[2026-03-03T07:26:46.542Z]   Uploaded: image6.png -> image-25927e79c6545e1bd92c0e2e655e4b18a9bc830b-800x800-webp
+[2026-03-03T07:26:47.317Z]   SUCCESS: Updated product with 6 images
+[2026-03-03T07:26:47.317Z] 
+--- [20/23] ---
+[2026-03-03T07:26:47.318Z] Processing product: LJInH2h67LnJd8VEvrxwVQ
+[2026-03-03T07:26:47.318Z]   Found 6 images in "dochoiDomino"
+[2026-03-03T07:26:49.514Z]   Uploaded: image1.png -> image-3d6e61468c9c62e7e72a332b5953ca543fc5e694-1024x1024-webp
+[2026-03-03T07:26:50.912Z]   Uploaded: image2.png -> image-b87885d8261b3d5c42caae51b2fcc34828377b6f-960x960-webp
+[2026-03-03T07:26:52.254Z]   Uploaded: image3.png -> image-9515a37cbce6929e25065090baa5d86a018cfb53-800x800-webp
+[2026-03-03T07:26:53.576Z]   Uploaded: image4.png -> image-b674aa1cd702b3f3c25ba47387fb19bfbde11727-500x500-webp
+[2026-03-03T07:26:55.475Z]   Uploaded: image5.png -> image-2b959d09cd8fb29d91a2c519fd49046c6e7f247b-1024x1024-webp
+[2026-03-03T07:26:57.762Z]   Uploaded: image6.png -> image-7b400b2ed4a5cab499d901689f77b03f1458ed9c-1000x1000-webp
+[2026-03-03T07:26:58.392Z]   SUCCESS: Updated product with 6 images
+[2026-03-03T07:26:58.393Z] 
+--- [21/23] ---
+[2026-03-03T07:26:58.393Z] Processing product: LJInH2h67LnJd8VEvrxzZ6
+[2026-03-03T07:26:58.394Z]   Found 9 images in "kesach4tang"
+[2026-03-03T07:27:00.360Z]   Uploaded: image1.png -> image-2f9c12b9af055260aae05d6a5c97a1334de8c386-640x640-webp
+[2026-03-03T07:27:01.968Z]   Uploaded: image2.png -> image-e11b4d65f56c5a7fc82eda5df6916236e7d8936c-640x640-webp
+[2026-03-03T07:27:03.244Z]   Uploaded: image3.png -> image-03de247b26390020f1a59227862bcd259eb1fcb9-640x640-webp
+[2026-03-03T07:27:04.725Z]   Uploaded: image4.png -> image-3382c4bc6a68b4f3c02bae3d7feaa8c7df0edca7-640x640-webp
+[2026-03-03T07:27:06.032Z]   Uploaded: image5.png -> image-2a9d15f74a0ed35effb5ad235076e848d5b075d9-640x640-webp
+[2026-03-03T07:27:07.291Z]   Uploaded: image6.png -> image-72d046c1a950904e292cde21eb797f1e011b5283-640x640-webp
+[2026-03-03T07:27:08.784Z]   Uploaded: image7.png -> image-333bc7c68d2d6815a0900009231c782ba8f54f15-640x640-webp
+[2026-03-03T07:27:10.535Z]   Uploaded: image8.png -> image-5a554aad1f7682b0987d164d049c3d0ba8d89af7-640x640-webp
+[2026-03-03T07:27:11.838Z]   Uploaded: image9.png -> image-6817eaf42a976263baf8cf8c99bbfaa29db5e09e-640x640-webp
+[2026-03-03T07:27:12.475Z]   SUCCESS: Updated product with 9 images
+[2026-03-03T07:27:12.475Z] 
+--- [22/23] ---
+[2026-03-03T07:27:12.475Z] Processing product: LJInH2h67LnJd8VEvs2UQC
+[2026-03-03T07:27:12.476Z]   Found 7 images in "moctreoquanaogotamgiac"
+[2026-03-03T07:27:14.328Z]   Uploaded: image1.png -> image-525206ef4cde9bf1b7ae00ba9779699e390aa046-980x980-webp
+[2026-03-03T07:27:16.570Z]   Uploaded: image2.png -> image-0ccc925b9c76403f0229221127568fc682aee201-757x757-webp
+[2026-03-03T07:27:18.122Z]   Uploaded: image3.png -> image-b9531513d4525557a1ea377bfeb357463f138cd4-728x728-webp
+[2026-03-03T07:27:19.932Z]   Uploaded: image4.png -> image-f1c485c58b60a78f4681829fa6be444ced768f8a-663x663-webp
+[2026-03-03T07:27:21.293Z]   Uploaded: image5.png -> image-3ef3407d7c01fe614c15a48c61b767da7107dc41-757x757-webp
+[2026-03-03T07:27:22.649Z]   Uploaded: image6.png -> image-37fa6c06ba3d7dd5335493e7d156d7d473aab99b-555x555-webp
+[2026-03-03T07:27:24.133Z]   Uploaded: image7.png -> image-a08a182bc7ddb5c351bc260504e0cbae188dfe00-1024x1024-webp
+[2026-03-03T07:27:25.472Z]   SUCCESS: Updated product with 7 images
+[2026-03-03T07:27:25.473Z] 
+--- [23/23] ---
+[2026-03-03T07:27:25.473Z] Processing product: xfUCZ6xEEeYQ6HWfAs66qM
+[2026-03-03T07:27:25.474Z]   Found 4 images in "giatreotuonghinhvuong"
+[2026-03-03T07:27:27.002Z]   Uploaded: image1.png -> image-789d82c1477a27f29834e7baccd0a5c45d38fbb5-800x800-webp
+[2026-03-03T07:27:28.759Z]   Uploaded: image2.png -> image-ac5367d4234233cfe32a2ddcbfb7c1fe634b2e62-800x800-webp
+[2026-03-03T07:27:30.140Z]   Uploaded: image3.png -> image-ed7f0c4fa6dad83aa0a2478771c0c65cee86c018-800x800-webp
+[2026-03-03T07:27:31.533Z]   Uploaded: image4.png -> image-f05d863dd21c12ee5c36307b9d2b0faa3ad070f4-602x602-webp
+[2026-03-03T07:27:32.620Z]   SUCCESS: Updated product with 4 images
+[2026-03-03T07:27:32.621Z] 
+All done!

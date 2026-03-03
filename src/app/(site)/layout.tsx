@@ -1,7 +1,14 @@
 import { Playfair_Display, Inter } from "next/font/google";
+import { Metadata } from "next";
 import "../css/style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/images/logo/neuronest_logo.png",
+  },
+};
 
 import QuickViewModal from "@/components/Common/QuickViewModal";
 import CartSidebarModal from "@/components/Common/CartSidebarModal";

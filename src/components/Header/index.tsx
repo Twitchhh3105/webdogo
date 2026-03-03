@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import CustomSelect from "./CustomSelect";
+import SearchBar from "./SearchBar";
 import { menuData } from "./menuData";
 import Dropdown from "./Dropdown";
 import { useAppSelector } from "@/redux/store";
@@ -87,8 +88,9 @@ const Header = ({ categories = [] }: { categories?: Category[] }) => {
               />
             </Link>
 
-            <div className="max-w-[475px] w-full hidden">
-              {/* Search bar removed by user request */}
+            {/* Search bar */}
+            <div className="max-w-[750px] flex-1 w-full hidden sm:block">
+              <SearchBar />
             </div>
           </div>
 

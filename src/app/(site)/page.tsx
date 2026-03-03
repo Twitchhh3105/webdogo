@@ -7,6 +7,9 @@ export const revalidate = 0;
 export const metadata: Metadata = {
   title: "Neuronest | Nội Thất Gỗ Cao Cấp",
   description: "Trải nghiệm không gian sống đẳng cấp với Neuronest - Chuyên cung cấp nội thất gỗ tự nhiên tinh tế và sang trọng.",
+  icons: {
+    icon: "/images/logo/neuronest_logo.png",
+  },
 };
 
 export default async function HomePage() {

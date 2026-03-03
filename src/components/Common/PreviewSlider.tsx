@@ -95,26 +95,31 @@ const PreviewSliderModal = () => {
       </div>
 
       <Swiper ref={sliderRef} slidesPerView={1} spaceBetween={20}>
-        <SwiperSlide>
-          <div className="flex justify-center items-center">
-            <Image
-              src={"/images/products/product-2-bg-1.png"}
-              alt={"product image"}
-              width={450}
-              height={450}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex justify-center items-center">
-            <Image
-              src={"/images/products/product-2-bg-1.png"}
-              alt={"product image"}
-              width={450}
-              height={450}
-            />
-          </div>
-        </SwiperSlide>
+        {data.imgs?.previews && data.imgs.previews.length > 0 ? (
+          data.imgs.previews.map((img, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex justify-center items-center">
+                <Image
+                  src={img}
+                  alt={`${data.title || "product"} - image ${index + 1}`}
+                  width={450}
+                  height={450}
+                />
+              </div>
+            </SwiperSlide>
+          ))
+        ) : data.imageUrl ? (
+          <SwiperSlide>
+            <div className="flex justify-center items-center">
+              <Image
+                src={data.imageUrl}
+                alt={data.title || "product image"}
+                width={450}
+                height={450}
+              />
+            </div>
+          </SwiperSlide>
+        ) : null}
       </Swiper>
     </div>
   );

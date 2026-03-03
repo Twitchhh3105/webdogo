@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from "react";
 import Breadcrumb from "../Common/Breadcrumb";
 import Image from "next/image";
-import Newsletter from "../Common/Newsletter";
+
 import { usePreviewSlider } from "@/app/context/PreviewSliderContext";
 import { useAppSelector } from "@/redux/store";
+import { useDispatch } from "react-redux";
+import { updateproductDetails } from "@/redux/features/product-details";
 import { useLanguage } from "@/hooks/useLanguage";
 import { formatCurrency } from "@/utils/formatCurrency";
 import shopData from "../Shop/shopData";
@@ -12,6 +14,7 @@ import { Product } from "@/types/product";
 
 const ShopDetails = ({ product: propProduct }: { product?: Product }) => {
   const { t } = useLanguage();
+  const dispatch = useDispatch();
   const [activeColor, setActiveColor] = useState("");
   const { openPreviewModal } = usePreviewSlider();
   const [previewImg, setPreviewImg] = useState(0);
@@ -32,6 +35,13 @@ const ShopDetails = ({ product: propProduct }: { product?: Product }) => {
 
   // Fallback to propProduct, then Redux state, then first product if nothing in state
   const product = propProduct || (productFromStorage.title !== "" ? productFromStorage : shopData[0]);
+
+  // Sync product data to Redux so PreviewSlider modal can access it
+  useEffect(() => {
+    if (product && product.title) {
+      dispatch(updateproductDetails(product));
+    }
+  }, [product, dispatch]);
 
   useEffect(() => {
     if (product.color && !activeColor) {
@@ -126,22 +136,6 @@ const ShopDetails = ({ product: propProduct }: { product?: Product }) => {
               <form onSubmit={(e) => e.preventDefault()}>
                 <div className="flex flex-col gap-6 border-t border-gray-3 pt-8 pb-10">
                   <div className="flex items-center gap-6">
-                    <h4 className="font-semibold text-dark min-w-[80px]">{t.color}:</h4>
-                    <div className="flex items-center gap-3">
-                      {colors.map((color, key) => (
-                        <button
-                          key={key}
-                          type="button"
-                          className={`w-8 h-8 rounded-full border-2 transition-all transform hover:scale-110 ${activeColor === color ? "border-blue p-0.5 scale-110 shadow-lg" : "border-transparent"}`}
-                          onClick={() => setActiveColor(color)}
-                        >
-                          <div className="w-full h-full rounded-full" style={{ backgroundColor: color }}></div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-6 mt-4">
                     <h4 className="font-semibold text-dark min-w-[80px]">{t.quantity}:</h4>
                     <div className="flex items-center rounded-lg border border-gray-3 bg-white shadow-sm overflow-hidden">
                       <button
@@ -275,7 +269,6 @@ const ShopDetails = ({ product: propProduct }: { product?: Product }) => {
         </div>
       </section>
 
-      <Newsletter />
     </>
   );
 };

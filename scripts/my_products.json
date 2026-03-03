@@ -182,5 +182,13 @@
         "material": "Gỗ",
         "categoryTitle": "Đồ dùng nhà bếp",
         "ImagePath": "public/images/products/khuondauphu.jpg"
+    },
+    {
+        "title": "Bộ Bàn Ghế Nghê Đỉnh Gỗ Hương Đá Nam Phi - 6 Món",
+        "price": 185000000,
+        "description": "Sản phẩm được các nghệ nhân chạm khắc hoàn toàn thủ công với họa tiết Nghê vờn cầu và Rồng chầu nguyệt tinh xảo. Từng đường nét đều toát lên vẻ uy nghi, quyền lực, không chỉ là điểm nhấn đẳng cấp cho không gian phòng khách mà còn mang ý nghĩa phong thủy, chiêu tài đón lộc cho gia chủ. Kích thước tham khảo: Ngang 105cm x Sâu 80cm x Cao 165cm. Giá bán (Demo): 35.000.000 VNĐ / ghế đơn.",
+        "material": "Gỗ Hương Đá Nam Phi 100%",
+        "categoryTitle": "Đồ nội thất",
+        "ImagePath": "public/images/products/ghego/image1.png"
     }
 ]
